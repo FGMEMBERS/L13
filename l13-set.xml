@@ -41,74 +41,85 @@ updated 2016 D-ECHO Benedikt Wolf
       <min-lb type="int">0</min-lb>
     </weight>
 
-
   <model>
    <path archive="y">Models/l-13.xml</path>
+            <rendering>
+                <reflection-enabled type="int">1</reflection-enabled>
+                <reflection-type type="int">2</reflection-type>
+                <reflection-dynamic type="int">1</reflection-dynamic>
+                <reflection-correction type="float">0.9</reflection-correction>
+                <reflection-fresnel type="float">0.5</reflection-fresnel>
+                <reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
+                <reflection-rainbow type="float">0.1</reflection-rainbow>
+                <reflection-noise type="float">0.05</reflection-noise>
+                <ambient-correction type="float">0.3</ambient-correction>
+            </rendering>
   </model>
 
-		<sound>
-			<path>Aircraft/ASK13/Sounds/ask13-sound.xml</path>
-		</sound>
+    <sound>
+            <path>Aircraft/L13/Sounds/sound.xml</path>
+    </sound>
   
   <help>
    <title>LET L-13 Blanik</title>
-	<key>
-		<name>Ctrl-w</name>
-		<desc>Place winch 1000m in front of aircraft</desc>
-	</key>
-	<key>
-		<name>W</name>
-		<desc>Toggle winch hook</desc>
-	</key>
-	<key>
-		<name>w</name>
-		<desc>Increase winch speed</desc>
-	</key>
-	<key>
-		<name>Ctrl-o</name>
-		<desc>Find aircraft for aerotow</desc>
-	</key>
-	<key>
-		<name>o</name>
-		<desc>Lock aerotow hook</desc>
-	</key>
-	<key>
-		<name>O</name>
-		<desc>Open aerotow hook</desc>
-	</key>
-        <text>
-        === General Help ===
-        -"Throttle" axis (or throttle keys) are connected to the glider's airbrake.
-        -You can take off using a winch or use another aircraft as an aerotow.
-        -The Walker uses e (E) and d(D) for walking instead of w(W) and s(S)!!!!
-        -To open the canopy, pull the left canopy lock (red, on the left side) full to the back and push the canopy
-        -> To jettison (throw away) the canopy, pull BOTH red locks full to the back and push the canopy, you can regain it via the menu
-        -Basic glider knowledge= RED=canopy(jettison) YELLOW=winch/aerotow hook GREEN=trim BLUE=airbrake
+                <key>
+                    <name>Ctrl-w</name>
+                    <desc>Place winch in front of aircraft</desc>
+                </key>
+                <key>
+                    <name>W</name>
+                    <desc>Increase winch speed</desc>
+                </key>
+                <key>
+                    <name>w</name>
+                    <desc>Decrease winch speed</desc>
+                </key>
+                <key>
+                    <name>Ctrl-o</name>
+                    <desc>Find aircraft for aerotow</desc>
+                </key>
+                <key>
+                    <name>o</name>
+                    <desc>Open aerotow and winch hooks. This releases the cable if one is attached.</desc>
+                </key>
+                <key>
+                    <name>W</name>
+                    <desc>Increase variometer volume</desc>
+                </key>
+                <key>
+                    <name>w</name>
+                    <desc>Decrease variometer volume</desc>
+                </key>
+                <text>
+                    === General Help ===
+                    - "Throttle" axis (or throttle keys) are connected to the glider's airbrake.
+                    - You can take off using a winch or use another aircraft as an aerotow.
+                    - The Walker uses e (E) and d(D) for walking instead of w and s!!!!
 
-        === Winch Takeoff Procedure ===
-        1. Retract speed brake (full "throttle")
-        2. Press Ctrl-w to place winch.
-        3. Press 'w' to start winching.
-        4. Keep 'w' pressed until at appropriate speed.
-        5. Keep aircraft level and take off.
-        6. When at appropriate alitude, press 'W' to disconnect winch.
-        7. Fly!
+                    === Winch Takeoff Procedure ===
+                    1. Retract speed brake (full "throttle")
+                    2. Press Ctrl-w to place winch.
+                    3. Press Shift-w to start winching.
+                    4. Control the winch speed throughout the entire launch. Shift-w makes the winch run faster, w makes it run slower.
+                    5. Keep wings level and gently lift the nose to take off once above the stall speed.
+                    6. When at appropriate alitude, press 'o' to release the cable.
+                    7. Fly!
+                    
+                === Aerotow Takeoff Procedure ===
+                1. Retract speed brake (full "throttle")
+                2. Place another aerotwo aircraft in front of your glider (multi-player).
+                3. Press 'o' to hook to the aerotow.
+                4. Ask the other aircraft to take off :).
+                5. Keep aircraft level and follow the aircraft until after takeoff..
+                6. When at appropriate alitude, press 'O' to disconnect the hook.
+                7. Fly!
 
-        === Aerotow Takeoff Procedure ===
-        1. Retract speed brake (full "throttle")
-        2. Place another aerotwo aircraft in front of your glider (multi-player).
-        3. Press 'o' to hook to the aerotow.
-        4. Ask the other aircraft to take off :).
-        5. Keep aircraft level and follow the aircraft until after takeoff..
-        6. When at appropriate alitude, press 'O' to disconnect the hook.
-        7. Fly!
-
-        === Ground handling ===
-        This aircraft has some features to make ground handling easier/possible at all. To use these features, open the "Ground service" dialog. When "Wings level" is activated, the aircraft gets levelled around the x-axes as if someone was holding your wing ;). If "Ground handling" is clicked, two features are enabled to pull the aircraft around on the ground: 
-        1. All rudder inputs are copied to a thruster, as if someone was pulling your wing so the aircraft turns and 
-        2. all throttle inputs cause your aircraft to taxi, as if someone (or a car) was pulling/pushing it.
-        When there is somebody with a followme around, you can connect to it by pressing Ctrl+o (release: Ctrl+shift+o) so he can carry you around the airport or even tow you into the air! (also check the Aerotow Settings therefor).
-        </text>
+                === Ground handling ===
+                This aircraft has some features to make ground handling easier/possible at all. To use these features, open the "Ground service" dialog. When "Wings level" is activated, the aircraft gets levelled around the x-axes as if someone was holding your wing ;). If "Ground handling" is clicked, two features are enabled to pull the aircraft around on the ground: 
+                1. All rudder inputs are copied to a thruster, as if someone was pulling your wing so the aircraft turns and 
+                2. all throttle inputs cause your aircraft to taxi, as if someone (or a car) was pulling/pushing it.
+                When there is somebody with a followme around, you can connect to it by pressing Ctrl+o (release: Ctrl+shift+o) so he can carry you around the airport or even tow you into the air! (also check the Aerotow Settings therefor).
+                </text>
   </help>
 
   <menubar>
@@ -161,6 +172,19 @@ updated 2016 D-ECHO Benedikt Wolf
    <visibility archive="y">false</visibility>
   </panel>
 
+  <config>
+      <hide-winch-msg type="bool">false</hide-winch-msg>
+  </config>
+        <!-- Save some properties when the simulator is shut down -->
+        <aircraft-data>
+            <path>/sim/model/window</path>
+            <path>/sim/model/window-shader</path>
+            <path>/sim/model/pilots-enabled</path>
+            <path>/sim/config/hide-winch-msg</path>
+            <path>/sim/weight[0]/weight-lb</path>
+            <path>/sim/weight[1]/weight-lb</path>
+        </aircraft-data>
+        
   <!-- position the pilot viewpoint and angle -->
   
   <view n="0">
@@ -308,7 +332,7 @@ updated 2016 D-ECHO Benedikt Wolf
 					<property type="string">/accelerations/pilot-g</property>
 				</signal>
 
-				<!-- The ASK13 uses some "virtual" gear (contact points).
+				<!-- The L13 uses some "virtual" gear (contact points).
 				     Their "wow" properties need to be recorded. -->
 				<signal>
 					<type>bool</type>
@@ -369,91 +393,107 @@ updated 2016 D-ECHO Benedikt Wolf
                 <property>controls/engines/engine[0]/reverser</property>
             </binding>
         </key>
-                      <!--
-			<key n="23">
-			<name>Ctrl-w</name>
-			<desc>Place Winch 1000m in front of aircraft</desc>
-			<binding>
-				<command>property-assign</command>
-				<property>/controls/winch/place</property>
-				<value type="bool">true</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>/controls/winch/place</property>
-					<value type="bool">false</value>
-				</binding>
-			</mod-up>
-			</key>
-                       -->
-			<key n="23">
-			  <name>Ctrl-w</name>
-			  <desc>Place Winch and hook in</desc>
-			  <binding>
-			    <command>nasal</command>
-			    <script>towing.setWinchPositionAuto()</script>
-			  </binding>
-			</key>
-			<key n="87">
-				<name>W</name>
-				<desc>Toggle winch hook</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-						var p = "/sim/hitches/winch/open";
-						setprop(p, !getprop(p));
-					</script>
-				</binding>
-			</key>
-			<key n="119">
-				<name>w</name>
-				<desc>Increase winch speed</desc>
-				<binding>
-					<command>nasal</command>
-					<script>interpolate("/sim/hitches/winch/winch/rel-speed", 1.0, 2)</script>
-				</binding>
-				<mod-up>
-					<binding>
-						<command>nasal</command>
-						<script>interpolate("/sim/hitches/winch/winch/rel-speed", 0.0, 2)</script>
-					</binding>
-				</mod-up>
-			</key>
-			<key n="15">
-				<name>Ctrl-o</name>
-				<desc>Find aircraft for aerotow</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>/controls/aerotow/find-aircraft</property>
-					<value type="bool">true</value>
-				</binding>
-				<mod-up>
-					<binding>
-						<command>property-assign</command>
-						<property>/controls/aerotow/find-aircraft</property>
-						<value type="bool">false</value>
-					</binding>
-				</mod-up>
-			</key>
-			<key n="111">
-				<name>o</name>
-				<desc>Lock aerotow hook</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>/sim/hitches/aerotow/open</property>
-					<value type="bool">false</value>
-				</binding>
-			</key>
-			<key n="79">
-				<name>O</name>
-				<desc>Open aerotow hook</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>/sim/hitches/aerotow/open</property>
-					<value type="bool">true</value>
-				</binding>
-			</key>
+            <key n="23">
+                <name>Ctrl-w</name>
+                <desc>Place winch in front of aircraft</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>towing.setWinchPositionAuto()</script>
+                </binding>
+            </key>
+            <key n="87">
+                <name>W</name>
+                <desc>Increase winch speed</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        throttle = getprop("/sim/hitches/winch/winch/rel-speed") + 0.05;
+                        if (throttle > 1) throttle = 1;
+                        setprop("/sim/hitches/winch/winch/rel-speed", throttle);
+                        speed = throttle * getprop("/sim/hitches/winch/winch/max-speed-m-s");
+                        force = getprop("/sim/hitches/winch/force");
+                        gui.popupTip(sprintf("Winch throttle %d%%, speed %0.2f m/s, force %0.2f", throttle * 100, speed, force));
+                    </script>
+                </binding>
+            </key>
+            <key n="119">
+                <name>w</name>
+                <desc>Decrease winch speed</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        throttle = getprop("/sim/hitches/winch/winch/rel-speed") - 0.05;
+                        if (0 > throttle) throttle = 0;
+                        setprop("/sim/hitches/winch/winch/rel-speed", throttle);
+                        speed = throttle * getprop("/sim/hitches/winch/winch/max-speed-m-s");
+                        force = getprop("/sim/hitches/winch/force");
+                        gui.popupTip(sprintf("Winch throttle %d%%, speed %0.2f m/s, force %0.2f", throttle * 100, speed, force));
+                    </script>
+                </binding>
+            </key>
+            <key n="15">
+                <name>Ctrl-o</name>
+                <desc>Find aircraft for aerotow</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/aerotow/find-aircraft</property>
+                    <value type="bool">true</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/aerotow/find-aircraft</property>
+                        <value type="bool">false</value>
+                    </binding>
+                </mod-up>
+            </key>
+            <key n="111">
+                <name>o</name>
+                <desc>Open hook</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/hook-open</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/aerotow/open</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/sim/hitches/winch/open</property>
+                    <value type="bool">true</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/sim/hitches/hook-open</property>
+                        <value type="bool">false</value>
+                    </binding>
+                </mod-up>
+
+            </key>
+            <key n="83">
+                <name>S</name>
+                <desc>Vario volume up</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/ilec-sc7/volume</property>
+                    <step>0.1</step>
+                    <max>1</max>
+                </binding>
+            </key>
+            <key n="115">
+                <name>s</name>
+                <desc>Vario volume down</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/ilec-sc7/volume</property>
+                    <step>-0.1</step>
+                    <min>0</min>
+                </binding>
+            </key>
 		</keyboard>
 	</input>
 
@@ -462,7 +502,6 @@ updated 2016 D-ECHO Benedikt Wolf
 			<file>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.nas</file>
 			<file>Nasal/wool-thread.nas</file>
 			<file>Nasal/AR3201.nas</file>
-			<file>Nasal/immat.nas</file>
 			<file>Nasal/dialogs.nas</file>
 			<file>Nasal/ground-handling.nas</file>
 			<file>Nasal/liveries.nas</file>

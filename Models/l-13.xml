@@ -118,6 +118,7 @@
  </model>
 
   <model>
+      <name>woolthread1</name>
 	 <path>instruments/wool-thread/wool-thread.xml</path>
 	 <offsets>
              <x-m>-3.76851</x-m>
@@ -128,6 +129,7 @@
  </model>
 
   <model>
+      <name>woolthread2</name>
 	 <path>instruments/wool-thread/wool-thread.xml</path>
 	 <offsets>
              <x-m>-2.4764</x-m>
@@ -239,22 +241,29 @@
     <object-name>vstab</object-name>
     <object-name>rudder</object-name>
     <object-name>canopyframe</object-name>
+    <object-name>canopyframe2</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>canopy</object-name>
+    <object-name>canopy2</object-name>
+    <object-name>canopy.int</object-name>
+    <object-name>canopy2.int</object-name>
   </effect>
   
   <!--Canopy-->
   <animation>
     <name>canopyfull</name>
-    <object-name>windshield</object-name>
-    <object-name>windshield2_0</object-name>
-    <object-name>windshield2_1</object-name>
-    <object-name>windshield.001</object-name>
-    <object-name>windshield.002</object-name>
-    <object-name>windshield.003</object-name>
-    <object-name>windshield.004</object-name>
-        <object-name>canopyhandle.left1</object-name>
-        <object-name>canopyhandle.left2</object-name>
-        <object-name>canopyhandle.right1</object-name>
-        <object-name>canopyhandle.right2</object-name>
+    <object-name>canopy</object-name>
+    <object-name>canopyframe</object-name>
+    <object-name>doorhandleL</object-name>
+    <object-name>doorhandleR</object-name>
+    <object-name>doorhandleRL</object-name>
+    <object-name>doorhandleRR</object-name>
+    <object-name>woolthread2</object-name>
+    <object-name>canopy</object-name>
+    <object-name>canopy.int</object-name>
   </animation>
 
   <animation>
@@ -274,14 +283,14 @@
                 <property>controls/canopy/lock-right</property>
                 <value>0.5</value>
             </less-than>
-        </and>
-                    
+        </and>   
                 </condition>
         <command>nasal</command>
         <script>doors.canopy.toggle();</script>
       </binding>
       <binding>
-          <condition><and>
+          <condition>
+              <and>
                     <greater-than>
                 <property>controls/canopy/lock-left</property>
                     <value>0.8</value>
@@ -309,12 +318,12 @@
       <entry><ind> 1.0 </ind><dep> -85 </dep></entry>
     </interpolation>
         <axis>
-            <x1-m>1.02097</x1-m>
-            <y1-m>0.2968</y1-m>
-            <z1-m>0.29843</z1-m>
-            <x2-m>1.98815</x2-m>
-            <y2-m>0.30346</y2-m>
-            <z2-m>0.47223</z2-m>
+            <x1-m>-3.21219</x1-m>
+            <y1-m>0.27164</y1-m>
+            <z1-m>-0.18495</z1-m>
+            <x2-m>-1.88165</x2-m>
+            <y2-m>0.30323</y2-m>
+            <z2-m>-0.05545</z2-m>
         </axis>
   </animation>
 
@@ -325,8 +334,8 @@
     <property>sim/model/door-positions/canopy_jettison/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
-      <entry><ind> 0.2 </ind><dep> 0.1 </dep></entry>
-      <entry><ind> 1.0 </ind><dep> 0.1 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 0.4 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.4 </dep></entry>
     </interpolation>
         <axis>
             <z>1</z>
@@ -340,8 +349,8 @@
     <interpolation>
       <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 0.2 </ind><dep> 0.0 </dep></entry>
-      <entry><ind> 0.4 </ind><dep> 0.5 </dep></entry>
-      <entry><ind> 1.0 </ind><dep> 0.5 </dep></entry>
+      <entry><ind> 0.4 </ind><dep> 0.8 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.8 </dep></entry>
     </interpolation>
         <axis>
             <y>1</y>
@@ -375,8 +384,8 @@
   
     <animation>
         <type>slider</type>
-        <object-name>canopyhandle.left1</object-name>
-        <object-name>canopyhandle.left2</object-name>
+        <object-name>doorhandleL</object-name>
+        <object-name>doorhandleRL</object-name>
         <drag-direction>horizontal</drag-direction>
         <action>
             <binding>
@@ -405,26 +414,42 @@
     </animation>
     
     <animation>
-        <type>translate</type>
-        <object-name>canopyhandle.left1</object-name>
-        <object-name>canopyhandle.left2</object-name>
-                <property>controls/canopy/lock-left</property>
-        <factor>0.05</factor>
+        <type>rotate</type>
+        <object-name>doorhandleL</object-name>
+        <property>controls/canopy/lock-left</property>
+        <factor>70</factor>
+        <center>
+                <x-m>-3.10782</x-m>
+                <z-m>-0.17375</z-m>
+        </center>
         <axis>
-            <x1-m>1.02097</x1-m>
-            <y1-m>-0.2578</y1-m>
-            <z1-m>0.29843</z1-m>
-            <x2-m>1.98815</x2-m>
-            <y2-m>-0.2703</y2-m>
-            <z2-m>0.47223</z2-m>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>doorhandleRL</object-name>
+        <property>controls/canopy/lock-left</property>
+        <factor>70</factor>
+        <center>
+                <x-m>-2.204</x-m>
+                <z-m>-0.08573</z-m>
+        </center>
+        <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
         </axis>
     </animation>
     <!--Canopy JETTISON handle RIGHT-->
   
     <animation>
         <type>slider</type>
-        <object-name>canopyhandle.right1</object-name>
-        <object-name>canopyhandle.right2</object-name>
+        <object-name>doorhandleR</object-name>
+        <object-name>doorhandleRR</object-name>
         <drag-direction>horizontal</drag-direction>
         <action>
             <binding>
@@ -453,18 +478,33 @@
     </animation>
     
     <animation>
-        <type>translate</type>
-        <object-name>canopyhandle.right1</object-name>
-        <object-name>canopyhandle.right2</object-name>
-                <property>controls/canopy/lock-right</property>
-        <factor>0.05</factor>
+        <type>rotate</type>
+        <object-name>doorhandleR</object-name>
+        <property>controls/canopy/lock-right</property>
+        <factor>70</factor>
+        <center>
+                <x-m>-3.10782</x-m>
+                <z-m>-0.17375</z-m>
+        </center>
         <axis>
-            <x1-m>1.02097</x1-m>
-            <y1-m>-0.2578</y1-m>
-            <z1-m>0.29843</z1-m>
-            <x2-m>1.98815</x2-m>
-            <y2-m>-0.2703</y2-m>
-            <z2-m>0.47223</z2-m>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>doorhandleRR</object-name>
+        <property>controls/canopy/lock-right</property>
+        <factor>70</factor>
+        <center>
+                <x-m>-2.204</x-m>
+                <z-m>-0.08573</z-m>
+        </center>
+        <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
         </axis>
     </animation>
     
@@ -876,15 +916,14 @@
   
  	<animation>
 		<type>rotate</type>
-		<object-name>front-yoke</object-name>
+		<object-name>stick.front</object-name>
 		<property>controls/flight/elevator</property>
 		<min-deg>-20</min-deg>
 		<max-deg>20</max-deg>
 		<factor>20</factor>
 		<center>
-			<x-m>0.884265</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.237486</z-m>
+			<x-m>-3.29633</x-m>
+			<z-m>-0.5531</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -896,15 +935,14 @@
 
  	<animation>
 		<type>rotate</type>
-		<object-name>front-yoke</object-name>
+		<object-name>stick.front</object-name>
 		<property>controls/flight/aileron</property>
-		<min-deg>-25</min-deg>
-		<max-deg>25</max-deg>
-		<factor>-25</factor>
+		<min-deg>-15</min-deg>
+		<max-deg>15</max-deg>
+		<factor>-15</factor>
 		<center>
-			<x-m>0.884265</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.237486</z-m>
+			<x-m>-3.29633</x-m>
+			<z-m>-0.5531</z-m>
 		</center>
 		<axis>
 			<x>1</x>
@@ -915,15 +953,14 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>back-yoke</object-name>
+		<object-name>stick.rear</object-name>
 		<property>controls/flight/elevator</property>
 		<min-deg>-20</min-deg>
 		<max-deg>20</max-deg>
 		<factor>20</factor>
 		<center>
-			<x-m>1.899079</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.125763</z-m>
+			<x-m>-2.29584</x-m>
+			<z-m>-0.50702</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -935,15 +972,14 @@
 
  	<animation>
 		<type>rotate</type>
-		<object-name>back-yoke</object-name>
+		<object-name>stick.rear</object-name>
 		<property>controls/flight/aileron</property>
 		<min-deg>-20</min-deg>
 		<max-deg>20</max-deg>
 		<factor>-20</factor>
 		<center>
-			<x-m>1.839929</x-m>
-			<y-m>-0.000313</y-m>
-			<z-m>-0.125763</z-m>
+			<x-m>-2.29584</x-m>
+			<z-m>-0.50702</z-m>
 		</center>
 		<axis>
 			<x>1</x>
